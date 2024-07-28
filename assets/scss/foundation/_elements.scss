@@ -1,0 +1,321 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/color" as color;
+
+p, a, h1, h2, h3, h4, span , label, .btn {
+  font-size: 14px;
+  font-family: 'Noto Sans JP',"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 1px;
+  line-height: 1em;
+  color: color.$main-black;
+}
+.imp-text {
+  color: color.$imp-red;
+  font-weight: bold;
+}
+.strong-color {
+  @include strong-color
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+	position: fixed;
+  top: 0;
+	width: 100vw;
+	height: 100svh;
+	z-index: 9999999999999999999;
+	background:#eee;
+	text-align:center;
+	color:#fff;
+  #splash_logo {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    svg{
+      width:100%;
+      margin: 0 auto;
+      transform: translateX(4vw);
+      @include sp {
+        transform: translateX(7.5vw) scale(1.8) !important;
+      }
+    }
+  }
+}
+
+
+/*=============== SVGアニメーション内の指定 =================*/
+
+/*アニメーション前の指定*/
+#mask path {
+  fill-opacity: 0;/*最初は透過0で見えない状態*/
+  transition: fill-opacity .5s;/*カラーがつく際のアニメーション0.5秒で変化*/
+  fill: none;/*塗りがない状態*/
+  stroke: #333;/*線の色*/
+  stroke-width: 10px;
+}
+
+/*アニメーション後に.doneというクラス名がで付与された時の指定*/
+#mask.done path{
+  fill: #333;/*塗りの色*/
+  fill-opacity: 1;/*透過1で見える状態*/
+  stroke: none;/*線の色なし*/
+}
+
+.progBar{
+  width: 32%;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  top: 55svh;
+  right: 50%;
+  transform: translateX(50%);
+  @include sp {
+    width:59vw;
+    top: 52.5svh;
+    transform: translateX(50%);
+  }
+  .bar{
+    width: 100%;
+    height:10px;
+    background: color.$strong-color;
+    animation: progress 3.0s normal;
+    animation-fill-mode: forwards;
+  }
+}
+
+.bg .bg-wrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+}
+.bg.is-animated .bg-wrap::before {
+  animation: bg 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background: color.$strong-color;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+}
+.bg .bg-wrap .inn {
+  color: #fff;
+  display: inline-block;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 5px 15px;
+  position: relative;
+  z-index: 1999999;
+}
+ 
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* animation */
+@-webkit-keyframes passing-bar{
+	0% {
+		left: 0;
+		right: auto;
+		width: 0;
+	}
+	50% {
+		left: 0;
+		right: auto;
+		width: 100%;
+	}
+	51% {
+		left: auto;
+		right: 0;
+		width: 100%;
+	}
+	100% {
+		left: auto;
+		right: 0;
+		width: 0;
+	}
+}
+@keyframes passing-bar{
+	0% {
+		left: 0;
+		width: 0;
+	}
+	50% {
+		left: 0;
+		width: 100%;
+	}
+	51% {
+		left: 0;
+		width: 100%;
+	}
+	100% {
+		left: 100%;
+		width: 0;
+	}
+}
+@-webkit-keyframes passing-txt{
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes passing-txt{
+	0% { opacity:0; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+/* css */
+.passing .passing-box {
+  width: auto;
+	display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 200px;
+  left: 20px;
+}
+.passing .passing-bar {
+  width: auto;
+	position: relative;
+	display: inline-block;
+	/*　後ほど解説　*/
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+  margin-bottom: 20px;
+}
+.passing .passing-bar:before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	/* 任意の値 */
+	background: #000;
+}
+.passing .passing-txt {
+	opacity: 0;
+	/* 後ほど解説 */
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	/* 任意の値 */
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 1.5;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-style: italic;
+  color: color.$main-black;
+}
+.passing.move .passing-bar:before {
+	-webkit-animation: passing-bar 1s ease 0s 1 normal forwards;
+	animation: passing-bar 1s ease 0s 1 normal forwards;
+}
+.passing.move .passing-txt {
+	-webkit-animation: passing-txt 0s ease .5s 1 normal forwards;
+	animation:passing-txt 0s ease .5s 1 normal forwards;
+}
+
+
+
+
+/*==================================================
+背景色が伸びて出現
+===================================*/
+
+/*全共通*/
+
+.bgextend{
+  animation-name:bgextendAnimeBase;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  position: relative;
+  overflow: hidden;/*　はみ出た色要素を隠す　*/
+  opacity:0;
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+}
+}
+
+/*中の要素*/
+.bgappear{
+  animation-name:bgextendAnimeSecond;
+  animation-duration: 0.1s;
+  animation-delay: 0.4s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+  0% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+}
+}
+
+/*左から右*/
+.bgLRextend::before{
+  animation-name:bgLRextendAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: color.$main-black;/*伸びる背景色の設定*/
+    z-index: 1;
+}
+@keyframes bgLRextendAnime{
+  0% {
+    transform-origin:left;
+    transform:scaleX(0);
+  }
+  40% {
+    transform-origin:left;
+    transform:scaleX(1);
+  }
+  40.001% {
+    transform-origin:right;
+  }
+  100% {
+    transform-origin:right;
+    transform:scaleX(0);
+  }
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.bgappearTrigger,
+.bgLRextendTrigger{
+    opacity: 0;
+}

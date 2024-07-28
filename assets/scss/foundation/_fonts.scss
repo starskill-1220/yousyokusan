@@ -1,0 +1,9 @@
+@use "../foundation/color" as *;
+
+$font-family-zenkaku: "zen-kaku-gothic-antique", sans-serif;
+$fonts02:'Montserrat', sans-serif;
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
