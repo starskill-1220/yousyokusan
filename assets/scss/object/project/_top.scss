@@ -1,0 +1,428 @@
+@use "../../foundation/color" as c;
+@use "../../foundation/fonts" as f;
+@use "../../foundation/mixin" as *;
+
+#swiperMain1 {
+  margin-top: 80px;
+  margin-bottom: responsiveValue(20px,20px);
+  .swiper-slide {
+    object-fit: cover;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+#swiperThumb1 {
+  width: responsiveValue(1000px,300px);
+  margin-bottom: responsiveValue(20px,20px);
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .swiper-slide {
+    transform: translateX(5px);
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .swiper-slide-thumb-active {
+    outline: 3px solid orangered;
+    outline-offset: -3px;
+  }
+}
+
+.p-top__sale {
+  padding-top: responsiveValue(100px,50px);
+}
+
+
+/*ニュース1行の周りの余白*/
+
+.news01 {
+  width: 100%;
+  background-color: white;
+  padding: 30px 0px;
+  .news-item {
+    width: 60%;
+    max-width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    a{
+      font-size: responsiveValue(1.6rem,1.4rem);
+      display: block;
+      padding:20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .news-item__cat {
+        background-color: red;
+        color: white;
+        font-size: responsiveValue(1.4rem,1.2rem);
+        padding: 5px 10px;
+        margin-right: 20px;
+      }
+      .news-item__date {
+        margin-right: 20px;
+      }
+
+    }
+  }
+}
+
+/*日付*/
+.news01 span {
+  display:inline-block;
+  font-size:responsiveValue(1.4rem,1.2rem);
+  margin-right:10px;
+  color:#777;
+}
+
+/*768px以下の見た目　※1行のままにしたい場合は不要*/
+@media screen and (max-width:768px) {
+  .news01 {
+      padding:20px;
+      background:#fff;
+  }
+
+  .news01 li {
+      border-bottom:1px dashed #ccc;
+  }
+
+  .news01 li:last-child {
+      border-bottom:none;
+  }
+  .news01 span {
+      display:block;
+  padding-bottom:10px;
+  }
+}
+
+
+
+
+.section01 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url(../img/top/section-img01.png);
+  background-color: #00000029;
+  background-blend-mode:darken;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .section01-container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0px 200px 0px ;
+    p {
+      font-size: 16px;
+      font-family: f.$font-family-zenkaku;
+      color: c.$white-color;
+      line-height: 2.2em;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+    }
+    .btn01 {
+      color: c.$white-color;
+      border: 1px solid c.$white-color;
+    }
+  }
+}
+
+
+
+.slider01 {
+  width: 100%;
+  display: flex;
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: responsiveValue(20px,20px);
+  .slider-item {
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
+  }
+  .slick-dots {
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+  }
+  .slide-arrow {
+    background-color: c.$text-color;
+    bottom: 0;
+    height: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+  .prev-arrow {
+    border-bottom: 20px solid c.$background-color;
+    border-left: 0;
+    border-right: 20px solid c.$text-color;
+    border-top: 20px solid c.$background-color;
+    left: -40px;
+  }
+  .next-arrow {
+    border-bottom: 20px solid c.$background-color;
+    border-left: 20px solid c.$text-color;
+    border-right: 0;
+    border-top: 20px solid c.$background-color;
+    right: -40px;
+  }
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    padding: 0;
+  }
+}
+.slick-dotted.slick-slider {
+  margin-bottom: responsiveValue(70px,20px)!important;
+}
+
+
+
+.__list05 {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  .__item {
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    .__item-img {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      &::before {
+        color: c.$white-color;
+        font-size: 25px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        padding-top: 100%;
+        display: block;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        width: fit-content;
+        height: 100%;
+      }
+    }
+    h3 {
+      height: 45px;
+      font-size: 16px;
+      line-height: 1.5em;
+      margin-bottom: 10px;
+    }
+    .__item-price {
+      font-size: 24px;
+      margin-bottom: 10px;
+      &::before {
+        content: "¥";
+        font-size: 16px;
+        margin-right: 5px;
+      }
+      &::after {
+        content: "(税込)";
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+    .__item-desc {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .__item-btn {
+      width: 200px;
+      font-size: 15px;
+      text-align: center;
+      padding: 15px 0px;
+      border: 1px solid c.$text-color;
+      border-radius: 100px;
+    }
+    &:nth-child(1) .__item-img::before {
+      content: "1";
+      background-color: #F2C714;
+    }
+    &:nth-child(2) .__item-img::before {
+      content: "2";
+      background-color: #BFBFBF;
+    }
+    &:nth-child(3) .__item-img::before {
+      content: "3";
+      background-color: #92790E;
+    }
+  }
+}
+
+
+
+
+.__list06 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  .__item {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    .__item-img {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      &::after {
+        content: "";
+        padding-top: 70%;
+        display: block;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        width: fit-content;
+        height: 100%;
+      }
+    }
+    h3 {
+      height: 45px;
+      font-size: 16px;
+      line-height: 1.5em;
+      margin-bottom: 10px;
+    }
+    .__item-price {
+      font-size: 24px;
+      margin-bottom: 10px;
+      &::before {
+        content: "¥";
+        font-size: 16px;
+        margin-right: 5px;
+      }
+      &::after {
+        content: "(税込)";
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+    .__item-desc {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .__item-btn {
+      width: 200px;
+      font-size: 15px;
+      text-align: center;
+      padding: 15px 0px;
+      border: 1px solid c.$text-color;
+      border-radius: 100px;
+    }
+
+  }
+}
+
+
+/*アコーディオン全体*/
+.accordion02{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: responsiveValue(50px,50px);
+  ul {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    li{
+      padding: 20px 0;
+      border-top: 1px solid c.$text-color;
+    }
+    li:last-child {
+      border-bottom: 1px solid c.$text-color;
+    }
+  }
+
+  .accordion-head {
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size:responsiveValue(1.6rem,1.4rem);
+    font-weight: normal;
+    padding: 3% 3% 3% 50px;
+    transition: all .5s ease;
+  }
+  .accordion-head::before,
+  .accordion-head::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+  }
+  .accordion-head::before{
+    top:48%;
+    left: 15px;
+    transform: rotate(0deg);
+  }
+  .accordion-head::after{
+    top:48%;
+    left: 15px;
+    transform: rotate(90deg);
+  }
+  .accordion-head.close::before{
+    transform: rotate(45deg);
+    }
+    .accordion-head.close::after{
+    transform: rotate(-45deg);
+    }
+  .accordion-body {
+    display: none;/*はじめは非表示*/
+    background: #EFEFEF;
+    margin:0 3% 3% 3%;
+    padding: 30px 3%;
+  }
+}
+

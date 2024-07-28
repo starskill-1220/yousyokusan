@@ -1,0 +1,74 @@
+@use "../foundation/color" as c;
+@use "../foundation/mixin" as *;
+
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 30px #00000030;
+  background-color: c.$white-color;
+  z-index: 999999999;
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .l-footer__inner {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .l-footer__logo {
+      width: responsiveValue(300px,100px);
+      img {
+        width: 100%;
+      }
+    }
+    .l-footer__gnav {
+      width: 60%;
+      max-width: 700px;
+      min-width: 550px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      list-style: none;
+      li {
+        font-weight: bold;
+        margin: 5px 0;
+        a {
+          font-size: responsiveValue(1.6rem,1.4rem);
+          color: c.$text-color;
+        }
+      }
+    }
+  }
+  .bottom {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    background-color: c.$text-color;
+    .l-footer__inner {
+      p,a {
+        color: c.$white-color;
+        font-size: responsiveValue(1.2rem,1.2rem);
+      }
+      .l-footer-bottom__list {
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        li {
+          padding: 10px 20px;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

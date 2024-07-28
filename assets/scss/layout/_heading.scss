@@ -1,0 +1,81 @@
+@use "../foundation/color" as c;
+@use "../foundation/fonts" as f;
+@use "../foundation/mixin" as *;
+
+
+
+.heading01 {
+  padding-bottom: responsiveValue(50px,50px);
+  h2 {
+    font-size: 30px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    &::before {
+      content: "";
+      width: 50px;
+      height: 20px;
+      background-image: url(../img/common/heading01-dec.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(-20px);
+    }
+  }
+  span {
+    display: block;
+    font-size: 14px;
+    color: c.$text-color;
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: 1px;
+    transform: translateY(15px);
+  }
+  &-left {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+.heading01--white {
+  margin-bottom: responsiveValue(50px,50px);
+  h2 {
+    font-size: 30px;
+    font-family: f.$font-family-zenkaku;
+    color: c.$white-color;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &::before {
+      content: "";
+      width: 50px;
+      height: 20px;
+      background-image: url(../img/common/heading01-dec--white.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(-20px);
+    }
+  }
+  span {
+    display: block;
+    font-size: 14px;
+    color: c.$white-color;
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: 1px;
+    transform: translateY(15px);
+  }
+}

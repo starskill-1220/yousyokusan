@@ -1,0 +1,45 @@
+@use "../foundation/color";
+@use "../foundation/mixin" as *;
+
+header {
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1px 30px #00000030;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 999999999;
+  .l-header__inner {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .l-header__logo {
+      width: responsiveValue(300px,100px);
+      img {
+        width: 100%;
+      }
+    }
+    .l-header__gnav {
+      width: 65%;
+      max-width: 800px;
+      min-width: 550px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      list-style: none;
+      li {
+        font-weight: bold;
+        margin: 5px 0;
+        a {
+          font-size: responsiveValue(1.6rem,1.4rem);
+        }
+      }
+    }
+  }
+}

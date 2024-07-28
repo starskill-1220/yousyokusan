@@ -1,0 +1,140 @@
+@use "../foundation/color";
+
+
+@mixin sp {
+  @media screen and (max-width: (color.$sp)) {
+    @content
+  }
+}
+
+
+@mixin strong-color {
+  background: linear-gradient(90deg, #5681f8 0%, #7B37F2 50%, #DB5F9F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin strong-color02 {
+  background: linear-gradient(90deg, #5681f8 0%, #7B37F2 50%, #DB5F9F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin effect-red1($data-text) {
+  content:attr($data-text);
+  position:absolute;
+  left:1px;
+  text-shadow:-1px 0 #de6164;
+  top:0;
+  z-index: -1;
+  color:#de6164;
+  background:rgba(255, 255, 255, 0);
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-1 2s infinite linear alternate-reverse;
+}
+@mixin effect-blue1($data-text) {
+  content:attr($data-text);
+  position:absolute;
+  left:1px;
+  text-shadow:1px 0 #2657eb;
+  top:0;
+  z-index: -1;
+  color:color.$main-black;
+  background:#ffffff00;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+
+@mixin effect-red2($data-text) {
+  content:attr($data-text);
+  position:absolute;
+  left:1px;
+  text-shadow:-1px 0 #de6164;
+  top:0;
+  z-index: -1;
+  color:#de6164;
+  background:rgba(255, 255, 255, 0);
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-3 2s infinite linear alternate-reverse;
+}
+@mixin effect-blue2($data-text) {
+  content:attr($data-text);
+  position:absolute;
+  left:1px;
+  text-shadow:1px 0 #2657eb;
+  top:0;
+  z-index: -1;
+  color:color.$main-black;
+  background:#ffffff00;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-4 3s infinite linear alternate-reverse;
+}
+
+
+$breakpoint: (
+  sm: 'screen and (max-width: 520px)',
+  sp: 'screen and (max-width: 768px)',
+  tab: 'screen and (max-width: 768px)',
+  pc: 'screen and (min-width: 769px)',
+  pc_large: 'screen and (min-width: 1281px)'
+);
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+/** --------------------------------
+* cssの値を単位を除いて数字だけにしてくれる関数
+*
+* @param 数字と単位を含む値 10ox, 3remなど
+*/
+@function stripUnit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+/** --------------------------------
+* 値の「単位」を取得する関数
+*
+* @param $value 数字と単位を含む値 10ox, 3remなど
+*/
+@function getUnit($value) {
+	@return str-slice($value * 0 + '', 2, -1);
+}
+
+/** --------------------------------
+* pxやremをvwに変換してくれる関数
+*
+* @param $viewport pcデザインの横幅
+* @param $fontSize フォントサイズ(pxでもremでも)
+*/
+$viewport: 1440px;
+
+@function vw($fontSize, $base-vw: $viewport) {
+	$unit: getUnit($fontSize);
+
+	@if $unit == px {
+		@return (stripUnit($fontSize) * 100vw) / stripUnit($base-vw);
+	}
+	@else if $unit == rem {
+		@return (stripUnit($fontSize) * 1000vw) / stripUnit($base-vw);
+	}
+}
+
+/** --------------------------------
+* フォントサイズをレスポンシブで調整する関数
+*
+* @param $pc pcのフォントサイズ
+* @param $sp spのフォントサイズ
+*/
+@function responsiveValue($pc, $sp, $viewport: 1440px) {
+	@return clamp(#{$sp}, #{vw($pc, $viewport)}, #{$pc});
+}

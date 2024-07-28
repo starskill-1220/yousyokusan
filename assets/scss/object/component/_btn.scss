@@ -1,0 +1,41 @@
+@use "../../foundation/mixin" as *;
+@use "../../foundation/color" as c;
+@use "../../foundation/fonts" as f;
+
+.c-btn {
+  display: block;
+  width: fit-content;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: c.$text-color;
+  border: 1px solid c.$text-color;
+  border-radius: 100px;
+  padding: 20px 100px;
+  margin: 0 auto;
+  transition: 0.3s;
+  &:hover {
+    color: c.$white-color!important;
+    background-color: c.$text-color;
+    transition: 0.3s;
+  }
+}
+
+.c-btn--white {
+  display: block;
+  width: fit-content;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: c.$white-color;
+  border: 1px solid c.$white-color;
+  border-radius: 100px;
+  padding: 20px 100px;
+  margin: 0 auto;
+  transition: 0.3s;
+  &:hover {
+    color: c.$text-color!important;
+    background-color: c.$white-color;
+    transition: 0.3s;
+  }
+}
