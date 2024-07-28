@@ -1,0 +1,203 @@
+@use "mixin" ;
+@use "color" as *;
+
+// ノイズっぽいテキストエフェクト
+@keyframes noise-anim-1{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+@keyframes noise-anim-3{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,6999px,random(100)+px,0);
+    }
+  }
+}
+@keyframes noise-anim-4{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,6999px,random(100)+px,0);
+    }
+  }
+}
+
+// page-serviceの永久スライド
+@keyframes slide1 {
+  0% {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+@keyframes slide2 {
+  0% {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-200%);
+  }
+}
+@include mixin.sp {
+  @keyframes slide1 {
+    0% {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes slide2 {
+      0% {
+          transform: translateX(0);
+      }
+      to {
+          transform: translateX(-200%);
+      }
+  }
+  .btn {
+      display: inline-block;
+      margin: 0 auto;
+  }
+}
+
+@-webkit-keyframes menu-bar01 {
+  0% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+@keyframes menu-bar01 {
+  0% {
+    transform: translateY(10px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+@-webkit-keyframes menu-bar02 {
+  0% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+@keyframes menu-bar02 {
+  0% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+@keyframes active-menu-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(10px) rotate(0);
+  }
+  100% {
+    transform: translateY(7px) rotate(45deg);
+  }
+}
+@keyframes active-menu-bar03 {
+0% {
+  transform: translateY(0) rotate(0);
+}
+50% {
+  transform: translateY(-10px) rotate(0);
+}
+100% {
+  transform: translateY(-9px) rotate(-45deg);
+}
+}
+/*========= 流体シェイプを動かす ===============*/
+
+@keyframes fluidrotate {
+0%, 100% {
+    border-radius: 63% 47% 54% 46%/55% 48% 52% 45%;
+}
+14% {
+    border-radius: 54% 47% 54% 46%/49% 60% 40% 51%;
+}
+28% {
+    border-radius: 53% 57% 48% 62%/49% 70% 40% 51%;
+}
+42% {
+    border-radius: 53% 67% 55% 45%/61% 48% 62% 49%;
+}
+56% {
+    border-radius: 63% 57% 67% 43%/70% 50% 50% 40%;
+}
+70% {
+    border-radius: 53% 47% 44% 66%/56% 68% 42% 44%;
+}
+84% {
+    border-radius: 43% 57% 50% 50%/45% 61% 49% 65%;
+}
+}
+
+
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove{
+  0%{top:-5px;}
+  100%{top:80px;}
+}
+
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide{
+  0%{opacity:0}
+  50%{opacity:1;}
+  80%{opacity:0.9;}
+  100%{opacity:0;}
+}
+
+@keyframes bg {
+  0% {
+    opacity: 0;
+    transform: scaleX(0) translateX(-5%);
+  }
+  30% {
+    transform: scaleX(1) translateX(0);
+  }
+  100% {
+    transform: scaleX(1) translateX(0);
+  }
+  30%, 100% {
+    opacity: 1;
+  }
+}
+@keyframes progress {
+  0% {width: 0}
+  100% {width: 100%}
+}

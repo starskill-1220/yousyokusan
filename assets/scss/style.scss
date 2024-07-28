@@ -1,0 +1,41 @@
+/*!
+Theme Name: yousyokusan
+Theme URI: 
+Description: yousyokusan
+Version: 1.0お
+*/
+@charset "UTF-8";
+/* ===============================================
+# foundation
+=============================================== */
+@use "foundation/reset";
+@use "foundation/color";
+@use "foundation/mixin";
+@use "foundation/keyframes";
+@use "foundation/base";
+@use "foundation/elements";
+
+/* ===============================================
+# layout
+=============================================== */
+@use "layout/page";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/heading";
+@use "layout/menu-trigger";
+
+/* ===============================================
+# component
+=============================================== */
+@use "object/component/btn";
+@use "object/component/scrolldown";
+
+/* ===============================================
+# project
+=============================================== */
+@use "object/project/top";
+
+
+/* ===============================================
+# utility
+=============================================== */

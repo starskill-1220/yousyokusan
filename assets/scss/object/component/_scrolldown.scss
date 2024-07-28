@@ -1,0 +1,46 @@
+@use "../../foundation/mixin" as *;
+@use "../../foundation/color" as color;
+
+
+.c-scrolldown-box {
+  width: 20px;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 15px;
+  .c-scrolldown{
+    /*描画位置※位置は適宜調整してください*/
+    @include sp {
+      position:absolute;
+      bottom:20px;
+      right:8vw;
+    }
+    /* 丸の描写 */
+    &:before {
+      content: "";
+      position: absolute;
+      top:0;
+      left:-6px;
+      /*丸の形状*/
+      width:14px;
+      height:14px;
+      background: color.$background-color;
+      border-radius: 50%;
+      /*丸の動き1.6秒かけて透過し、永遠にループ*/
+      animation:
+      circlemove 1.6s ease-in-out infinite,
+      cirlemovehide 1.6s ease-out infinite;
+    }
+    /* 線の描写 */
+    &:after{
+      content:"";
+      display: block;
+      /*線の形状*/
+      width:2px;
+      height: 80px;
+      background:color.$background-color;
+    }
+    &--black::before,&--black::after{
+      background:color.$main-black!important;
+    }
+  }
+}
