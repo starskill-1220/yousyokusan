@@ -5,12 +5,13 @@
 
 
 .heading01 {
-  padding-bottom: responsiveValue(50px,50px);
+  padding-bottom: responsiveValue(50px,30px);
   h2 {
-    font-size: 30px;
-    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: responsiveValue(3.0rem,2.4rem);
+    font-family: f.$font-family-zenkaku;
     font-weight: 400;
     letter-spacing: 2px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,16 +25,25 @@
       background-position: center;
       background-repeat: no-repeat;
       transform: translateY(-20px);
+      @include mq(sp) {
+        width: 30px;
+        height: 10px;
+        transform: translateY(-12px);
+      }
     }
   }
   span {
     display: block;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: c.$text-color;
-    font-weight: lighter;
+    font-weight: 400;
     text-align: center;
     letter-spacing: 1px;
     transform: translateY(15px);
+    @include mq(sp) {
+      font-size: 1.2rem;
+      transform: translateY(7px);
+    }
   }
   &-left {
     display: flex;
@@ -47,13 +57,15 @@
 
 
 .heading01--white {
-  margin-bottom: responsiveValue(50px,50px);
+  margin-bottom: responsiveValue(50px,30px);
   h2 {
-    font-size: 30px;
+    font-size: responsiveValue(3.0rem,2.4rem);
     font-family: f.$font-family-zenkaku;
     color: c.$white-color;
     font-weight: 400;
-    letter-spacing: 2px;
+    text-align: center;
+    line-height: responsiveValue(4.0rem,3.4rem);
+    letter-spacing: 0px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -66,16 +78,24 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      transform: translateY(-20px);
+      transform: translateY(-15px);
+      @include mq(sp) {
+        width: 30px;
+        height: 10px;
+        transform: translateY(-10px);
+      }
     }
   }
   span {
     display: block;
-    font-size: 14px;
+    font-size: responsiveValue(1.4rem,1.2rem);
     color: c.$white-color;
-    font-weight: lighter;
+    font-weight: 400;
     text-align: center;
-    letter-spacing: 1px;
-    transform: translateY(15px);
+    letter-spacing: 0px;
+    transform: translateY(10px);
+    @include mq(sp) {
+      transform: translateY(5px);
+    }
   }
 }

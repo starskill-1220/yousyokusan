@@ -3,9 +3,12 @@
 
 header {
   width: 100%;
-  height: 100px;
+  height: responsiveValue(100px,80px);
   box-sizing: border-box;
   padding: 30px 100px;
+  @include mq(sp) {
+    padding: 20px;
+  }
   display: flex;
   justify-content: center;
   box-shadow: 0 1px 30px #00000030;
@@ -20,26 +23,62 @@ header {
     justify-content: space-between;
     align-items: center;
     .l-header__logo {
-      width: responsiveValue(300px,100px);
+      width: responsiveValue(300px,200px);
       img {
         width: 100%;
       }
     }
-    .l-header__gnav {
-      width: 65%;
-      max-width: 800px;
+    nav {
+      width: 70%;
+      max-width: 900px;
       min-width: 550px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       list-style: none;
-      li {
-        font-weight: bold;
-        margin: 5px 0;
-        a {
-          font-size: responsiveValue(1.6rem,1.4rem);
+      @include mq(sp) {
+        opacity: 0;
+        pointer-events: none;
+      }
+      @include mq(sp) {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100vw;
+        max-width: auto;
+        min-width: auto;
+        height: 100svh;
+        background-color: white;
+        padding: 20px;
+        z-index: -1;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .l-header__gnav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include mq(sp) {
+          width: 100%;
+          flex-direction: column;
+          margin-top: 100px;
+          margin-bottom: 50px;
+        }
+        li {
+          font-weight: bold;
+          margin: 5px 0;
+          @include mq(sp) {
+            margin: 0;
+            margin-bottom: 30px;
+          }
+          text-align: center;
+          a {
+            font-size: responsiveValue(1.6rem,1.6rem);
+          }
         }
       }
+    }
+    .active {
+      transition: 0.3s;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

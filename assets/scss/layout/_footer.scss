@@ -1,5 +1,6 @@
 @use "../foundation/color" as c;
 @use "../foundation/mixin" as *;
+@use "../foundation/fonts" as f;
 
 footer {
   width: 100%;
@@ -10,6 +11,9 @@ footer {
   align-items: center;
   box-shadow: 0 1px 30px #00000030;
   background-color: c.$white-color;
+  @include mq(sp) {
+    background-color: c.$text-color;
+  }
   z-index: 999999999;
   .top {
     width: 100%;
@@ -23,27 +27,81 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mq(sp) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 20px;
+    }
     .l-footer__logo {
-      width: responsiveValue(300px,100px);
+      width: responsiveValue(300px,280px);
+      @include mq(sp) {
+        margin-bottom: 20px;
+      }
       img {
         width: 100%;
       }
     }
     .l-footer__gnav {
-      width: 60%;
-      max-width: 700px;
+      width: 70%;
+      max-width: 1000px;
       min-width: 550px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @include mq(sp) {
+        width: 100%;
+        max-width: auto;
+        min-width: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 20px;
+        border-bottom: 1px solid c.$white-color;
+
+      }
       list-style: none;
       li {
         font-weight: bold;
         margin: 5px 0;
+        @include mq(sp) {
+          display: flex;
+          align-items: center;
+          margin: 10px 0;
+          &::after {
+            display: block;
+            font-size: 1.0rem;
+            color: c.$white-color;
+            font-family: f.$font-family-zenkaku;
+            font-weight: 400;
+            margin-left: 10px;
+            transform: translateY(0px);
+          }
+          &:nth-child(1)::after {
+            content: "TOP";
+          }
+          &:nth-child(2)::after {
+            content: "ABOUT YOUSYOKU";
+          }
+          &:nth-child(3)::after {
+            content: "MEDAKATACHI";
+          }
+          &:nth-child(4)::after {
+            content: "SHOPPING GUIDE";
+          }
+          &:nth-child(5)::after {
+            content: "Q&A";
+          }
+          &:nth-child(6)::after {
+            content: "CONTACT";
+          }
+        }
         a {
           font-size: responsiveValue(1.6rem,1.4rem);
           color: c.$text-color;
+          @include mq(sp) {
+            color: c.$white-color;
+          }
         }
+        
       }
     }
   }
@@ -53,6 +111,9 @@ footer {
     display: flex;
     justify-content: center;
     background-color: c.$text-color;
+    @include mq(sp) {
+      margin-bottom: 10px;
+    }
     .l-footer__inner {
       p,a {
         color: c.$white-color;
@@ -62,11 +123,25 @@ footer {
         width: auto;
         display: flex;
         justify-content: space-between;
+        @include mq(sp) {
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
         li {
           padding: 10px 20px;
+          @include mq(sp) {
+            font-size: 1.2rem;
+            padding: 5px 0;
+          }
           &:last-child {
             padding-right: 0;
           }
+        }
+      }
+      @include mq(sp) {
+        .copy-right {
+          order: 2;
+          font-size: 1.0rem;
         }
       }
     }

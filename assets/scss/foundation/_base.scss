@@ -1,15 +1,15 @@
 @use "mixin" as *;
-@use "color" as color;
+@use "color" as c;
 
 .sp {
-  display: none;
-  @include sp {
-    display: block;
+  display: none!important;
+  @include mq(sp) {
+    display: block!important;
   }
 }
 .pc {
-  display: block;
-  @include sp {
+  display: block!important;
+  @include mq(sp) {
     display: none!important;
   }
 }
@@ -22,10 +22,10 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   animation: fadeIn 1s ease 0s 1 normal;
   -webkit-animation: fadeIn 1s ease 0s 1 normal;
-  background-color: color.$background-color;
+  background-color: c.$background-color;
 }
 body::after {
   content: '';
@@ -34,7 +34,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:color.$background-color;/* 色を変えたい場合はこちら */
+  background-color:c.$background-color;/* 色を変えたい場合はこちら */
   z-index: 9999999;
   pointer-events: none;
   opacity: 0;
@@ -78,10 +78,21 @@ body.fadeout::after {
 }
 
 section {
-  margin-bottom: responsiveValue(100px,50px) ;
+  padding: responsiveValue(80px,50px) 0;
   .inner {
-    width: 1320px;
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 20px;
     margin: 0 auto;
   }
 }
 
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
