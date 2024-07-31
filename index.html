@@ -15,10 +15,10 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
       <!-- swiperのCSS -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-      <!-- notosansjpフォント -->
+      <!-- Zen kaku Gothic New フォント-->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
       <!-- jQuery -->
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
       <!-- js -->
@@ -53,79 +53,110 @@
       </script>
 </head>
 <body>
+  <div id="particles-js"></div>
   <header>
     <div class="l-header__inner">
       <a href="">
         <h1 class="l-header__logo">
-          <img src="./assets/img/top/logo.png" alt="養殖さんロゴ">
-        </h1>  
+          <img src="./assets/img/common/logo.png" alt="養殖さんロゴ">
+        </h1>
       </a>
-      <nav class="l-header__gnav">
-        <li><a href="<?php echo get_template_directory_uri(); ?>/">トップ</a></li>
-        <li><a href="<?php echo get_template_directory_uri(); ?>/">養殖さんのこだわり</a></li>
-        <li><a href="<?php echo get_template_directory_uri(); ?>/">商品一覧</a></li>
-        <li><a href="<?php echo get_template_directory_uri(); ?>/">お買い物ガイド</a></li>
-        <li><a href="<?php echo get_template_directory_uri(); ?>/">よくある質問</a></li>
-        <li><a href="<?php echo get_template_directory_uri(); ?>/">お問い合わせ</a></li>
+      <div class="menu-trigger-box">
+        <p class="menu-trigger sp" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </p>
+      </div>
+      <nav class="l-header-nav">
+        <ul class="l-header-nav__list">
+          <li class="l-header-nav__item"><a href="<?php echo get_template_directory_uri(); ?>/">トップ</a></li>
+          <li class="l-header-nav__item"><a href="<?php echo get_template_directory_uri(); ?>/">養殖さんのこだわり</a></li>
+          <li class="l-header-nav__item"><a href="<?php echo get_template_directory_uri(); ?>/">養殖さんのめだかたち</a></li>
+          <li class="l-header-nav__item"><a href="<?php echo get_template_directory_uri(); ?>/">お買い物ガイド</a></li>
+          <li class="l-header-nav__item"><a href="<?php echo get_template_directory_uri(); ?>/">よくある質問</a></li>
+          <li class="l-header-nav__item"><a href="<?php echo get_template_directory_uri(); ?>/">お問い合わせ</a></li>
+        </ul>
+        <ul class="l-campaign-slider__list--sp sp">
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img05.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img06.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img07.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img05.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img06.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img07.jpg"></li>
+        </ul>
       </nav>
     </div>
   </header>
   <main>
     <section id="fv">
-      <div class="btn-box">
-        <div class="prev1"><i class="fa-solid fa-chevron-left"></i></div>
-        <div class="next1"><i class="fa-solid fa-chevron-right"></i></div>
-      </div>
-      <div class="swiper" id="swiperMain1" class="swiper-container">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide"><a href=""><img src="./assets/img/top/fv-img01.png" /></a></li>
-          <li class="swiper-slide"><a href=""><img src="./assets/img/top/fv-img02.png" /></a></li>
-          <li class="swiper-slide"><a href=""><img src="./assets/img/top/fv-img03.png" /></a></li>
-          <li class="swiper-slide"><a href=""><img src="./assets/img/top/fv-img01.png" /></a></li>
-          <li class="swiper-slide"><a href=""><img src="./assets/img/top/fv-img02.png" /></a></li>
-          <li class="swiper-slide"><a href=""><img src="./assets/img/top/fv-img03.png" /></a></li>
+      <div class="p-fv-slider__wrapper--main swiper pc" id="swiperMain1">
+        <ul class="p-fv-slider__list swiper-wrapper">
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img05.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img06.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img07.jpg" /></a></li>
+          <li class="swiper-slide"><a href=""><img src="./assets/img/top/campaign-img05.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img06.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img07.jpg" /></a></li>
         </ul>
       </div>
-      <div class="swiper" id="swiperThumb1" class="swiper-container">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide"><img src="./assets/img/top/fv-img01.png" /></li>
-          <li class="swiper-slide"><img src="./assets/img/top/fv-img02.png" /></li>
-          <li class="swiper-slide"><img src="./assets/img/top/fv-img03.png" /></li>
-          <li class="swiper-slide"><img src="./assets/img/top/fv-img01.png" /></li>
-          <li class="swiper-slide"><img src="./assets/img/top/fv-img02.png" /></li>
-          <li class="swiper-slide"><img src="./assets/img/top/fv-img03.png" /></li>
+      <div class="p-fv-slider__wrapper--thumb swiper pc" id="swiperThumb1">
+        <ul class="p-fv-slider__list swiper-wrapper">
+          <li class="p-fv-slider__item swiper-slide"><img src="./assets/img/top/campaign-img05.jpg" /></li>
+          <li class="p-fv-slider__item swiper-slide"><img src="./assets/img/top/campaign-img06.jpg" /></li>
+          <li class="p-fv-slider__item swiper-slide"><img src="./assets/img/top/campaign-img07.jpg" /></li>
+          <li class="p-fv-slider__item swiper-slide"><img src="./assets/img/top/campaign-img05.jpg" /></li>
+          <li class="p-fv-slider__item swiper-slide"><img src="./assets/img/top/campaign-img06.jpg" /></li>
+          <li class="p-fv-slider__item swiper-slide"><img src="./assets/img/top/campaign-img07.jpg" /></li>
         </ul>
       </div>
-      <ul class="news01">
-        <li class="news-item"><a href="#"><span class="news-item__cat">お知らせ</span><span class="news-item__date">2024年7月8日</span>1つめのニュースの記事です。</a></li>
-        <li class="news-item"><a href="#"><span class="news-item__cat">お知らせ</span><span class="news-item__date">2024年7月8日</span>2つめのニュースの記事です。</a></li>
-        <li class="news-item"><a href="#"><span class="news-item__cat">お知らせ</span><span class="news-item__date">2024年7月8日</span>3つめのニュースの記事です。</a></li>
+      <div class="p-fv-slider__wrapper--sp swiper sp" id="swiperMain2">
+        <ul class="p-fv-slider__list swiper-wrapper">
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img01.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img02.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img03.jpg" /></a></li>
+          <li class="p-fv-slider__item swiper-slide"><a href=""><img src="./assets/img/top/campaign-img04.jpg" /></a></li>
+
+        </ul>
+      </div>
+      <ul class="p-fv-news__list">
+        <li class="p-fv-news__item"><a href="#"><span class="p-fv-news__cat">お知らせ</span><span class="p-fv-news__date">2024.07.08</span>これはテストECサイトを開設しました。</a></li>
+        <li class="p-fv-news__item"><a href="#"><span class="p-fv-news__cat">お知らせ</span><span class="p-fv-news__date">2024.07.08</span>ECサイトを開設しました。</a></li>
+        <li class="p-fv-news__item"><a href="#"><span class="p-fv-news__cat">お知らせ</span><span class="p-fv-news__date">2024.07.08</span>ECサイトを開設しました。</a></li>
       </ul>
 
       <div class="inner p-top__sale">
-        <div class="heading01">
+        <div class="l-section-heading pc">
           <h2>おすすめセット</h2>
           <span>SET SALE</span>
         </div>
-        <ul class="slider01">
-          <li class="slider-item"><img src="./assets/img/top/sale-img01.png"></li>
-          <li class="slider-item"><img src="./assets/img/top/sale-img01.png"></li>
-          <li class="slider-item"><img src="./assets/img/top/sale-img01.png"></li>
-          <li class="slider-item"><img src="./assets/img/top/sale-img01.png"></li>
-          <li class="slider-item"><img src="./assets/img/top/sale-img01.png"></li>
-          <li class="slider-item"><img src="./assets/img/top/sale-img01.png"></li>
+        <ul class="l-campaign-slider__list--pc pc">
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img05.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img06.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img07.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img05.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img06.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img07.jpg"></li>
+        </ul>
+        <ul class="l-campaign-slider__list--sp sp">
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img05.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img06.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img07.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img05.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img06.jpg"></li>
+          <li class="l-campaign-slider__item"><img src="./assets/img/top/campaign-img07.jpg"></li>
         </ul>
         <a href="" class="c-btn">おすすめセットはこちら</a>
       </div>
     </section>
 
-    <section class="section01">
-      <div class="section01-container">
-        <div class="heading01--white">
-          <h2>どの家庭にもお手軽な「和」を</h2>
+    <section class="p-about">
+      <div class="p-about__wrapper">
+        <div class="l-section-heading--white">
+          <h2>どの家庭にも<br class="sp">お手軽な「和」を</h2>
           <span>JAPANESE SCENERY</span>
         </div>
-        <p>
+        <p class="p-about__text">
           初めまして、「養殖さん」と申します。<br>
           福岡を拠点にYoutubeで動画を投稿している、一応、メダカ系？YouTuberです(笑)<br>
           大分県にある養魚場では、主に【三色】や【紅白】のメダカに力を入れております。<br><br>
@@ -143,187 +174,277 @@
         <a class="c-btn--white" href="">養殖さんのこだわりへ</a>
       </div>
     </section>
-    <section>
+    <section class="p-recommend">
       <div class="inner">
-        <div class="heading01">
+        <div class="l-section-heading">
           <h2>イチオシのめだか</h2>
           <span>RECOMMEND</span>
         </div>
-        <ul class="__list05">
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img01.png" alt="">
-            </div>
-            <h3 >これはリスト5番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+        <ul class="p-recommend__list">
+          <li class="p-recommend__item">
+            <a href="">
+              <div class="p-recommend__item-img">
+                <img src="./assets/img/top/medaka-img01.png" alt="">
+              </div>
+              <div class="p-recommend__item-text-box">
+                <div class="top">
+                  <h3 class="p-recommend__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="p-recommend__item-price">1,980</p>
+                  <p class="p-recommend__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img02.png" alt="">
-            </div>
-            <h3 >これはリスト5番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="p-recommend__item">
+            <a href="">
+              <div class="p-recommend__item-img">
+                <img src="./assets/img/top/medaka-img02.png" alt="">
+              </div>
+              <div class="p-recommend__item-text-box">
+                <div class="top">
+                  <h3 class="p-recommend__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="p-recommend__item-price">1,980</p>
+                  <p class="p-recommend__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img03.png" alt="">
-            </div>
-            <h3 >これはリスト5番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="p-recommend__item">
+            <a href="">
+              <div class="p-recommend__item-img">
+                <img src="./assets/img/top/medaka-img03.png" alt="">
+              </div>
+              <div class="p-recommend__item-text-box">
+                <div class="top">
+                  <h3 class="p-recommend__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="p-recommend__item-price">1,980</p>
+                  <p class="p-recommend__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
         </ul>
       </div>
     </section>
-    <section>
+    <section class="l-goods">
       <div class="inner">
-        <div class="heading01">
+        <div class="l-section-heading">
           <h2>養殖さんのめだかたち</h2>
           <span>MEDAKATACHI</span>
         </div>
-        <ul class="__list06">
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img01.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+        <ul class="l-goods__list">
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img01.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img02.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img02.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img03.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img03.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img04.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img04.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img01.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img01.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img02.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img02.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img03.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img03.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img04.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img04.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img01.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img01.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img02.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img02.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img03.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img03.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
-          <li class="__item">
-            <div class="__item-img">
-              <img src="./assets/img/common/img04.png" alt="">
-            </div>
-            <h3 >これはリスト6番</h3>
-            <p class="__item-price">1,980</p>
-            <p class="__item-desc">これはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキストこれはダミーテキスト</p>
-            <a href="" class="__item-btn">詳細はこちら</a>
+          <li class="l-goods__item">
+            <a href="">
+              <div class="l-goods__item-img">
+                <img src="./assets/img/top/medaka-img04.png" alt="">
+              </div>
+              <div class="l-goods__item-text-box">
+                <div class="top">
+                  <h3 class="l-goods__item-title">赤ブチラメキッシングワイドフィン</h3>
+                  <p class="l-goods__item-price">1,980</p>
+                  <p class="l-goods__item-desc">4匹のセットですので、繁殖にオススメのセット販売になります。</p>
+                </div>
+                <a href="" class="c-btn">詳しく見る</a>
+              </div>
+            </a>
           </li>
         </ul>
-        <a href="" class="c-btn">もっと見る</a>
+        <a href="" class="c-btn">養殖さんのめだかたちを見る</a>
       </div>
     </section>
-    <section>
+    <section class="p-question">
       <div class="inner question-inner">
-        <div class="heading01">
+        <div class="l-section-heading">
           <h2>よくある質問</h2>
           <span>Q&A</span>
         </div>
-        <div class="accordion02">
-          <ul class="accordion02-left">
-            <li>
-                <p class="accordion-head">地方ですが発注は可能でしょうか</p>
-                  <p class="accordion-body">可能です。お気軽にご相談ください。</p>
+        <div class="p-question__wrapper">
+          <ul class="p-question__left-list">
+            <li class="p-question__item">
+                <p class="p-question__item-head">地方ですが発注は可能でしょうか</p>
+                  <p class="p-question__item-body">可能です。お気軽にご相談ください。可能です。お気軽にご相談ください。可能です。お気軽にご相談ください。可能です。お気軽にご相談ください。可能です。お気軽にご相談ください。可能です。お気軽にご相談ください。可能です。お気軽にご相談ください。</p>
             </li>
-            <li>
-                <p class="accordion-head">地方ですが発注は可能でしょうか</p>
-                  <p class="accordion-body">可能です。お気軽にご相談ください。</p>
+            <li class="p-question__item">
+                <p class="p-question__item-head">地方ですが発注は可能でしょうか</p>
+                  <p class="p-question__item-body">可能です。お気軽にご相談ください。</p>
             </li>
           </ul>
-          <ul class="accordion02-right">
-            <li>
-                <p class="accordion-head">地方ですが発注は可能でしょうか</p>
-                  <p class="accordion-body">可能です。お気軽にご相談ください。</p>
+          <ul class="p-question__right-list">
+            <li class="p-question__item">
+                <p class="p-question__item-head">地方ですが発注は可能でしょうか</p>
+                  <p class="p-question__item-body">可能です。お気軽にご相談ください。</p>
             </li>
-            <li>
-                <p class="accordion-head">地方ですが発注は可能でしょうか</p>
-                  <p class="accordion-body">可能です。お気軽にご相談ください。</p>
+            <li class="p-question__item">
+                <p class="p-question__item-head">地方ですが発注は可能でしょうか地方ですが発注は可能でしょうか地方ですが発注は可能でしょうか</p>
+                  <p class="p-question__item-body">可能です。お気軽にご相談ください。</p>
             </li>
           </ul>
         </div>
@@ -335,14 +456,15 @@
     <div class="l-footer__wrapper top">
       <div class="l-footer__inner">
         <a href="">
-          <h1 class="l-footer__logo">
-            <img src="./assets/img/top/logo.png" alt="養殖さんロゴ">
-          </h1>
+          <div class="l-footer__logo">
+            <img class="pc" src="./assets/img/common/logo.png" alt="養殖さんロゴ">
+            <img class="sp" src="./assets/img/common/logo-white.png" alt="養殖さんロゴ">
+          </div>
         </a>
         <nav class="l-footer__gnav">
           <li><a href="<?php echo get_template_directory_uri(); ?>/">トップ</a></li>
           <li><a href="<?php echo get_template_directory_uri(); ?>/">養殖さんのこだわり</a></li>
-          <li><a href="<?php echo get_template_directory_uri(); ?>/">商品一覧</a></li>
+          <li><a href="<?php echo get_template_directory_uri(); ?>/">養殖さんのめだかたち</a></li>
           <li><a href="<?php echo get_template_directory_uri(); ?>/">お買い物ガイド</a></li>
           <li><a href="<?php echo get_template_directory_uri(); ?>/">よくある質問</a></li>
           <li><a href="<?php echo get_template_directory_uri(); ?>/">お問い合わせ</a></li>
@@ -360,6 +482,10 @@
       </div>
     </div>
   </footer>
+  
+
+  <script src="./assets/js/particles.js"></script>
+  <script src="./assets/js/app.js"/></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
