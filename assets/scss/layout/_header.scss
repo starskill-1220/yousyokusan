@@ -28,7 +28,7 @@ header {
         width: 100%;
       }
     }
-    nav {
+    .l-header-nav {
       width: 70%;
       max-width: 900px;
       min-width: 550px;
@@ -51,7 +51,7 @@ header {
         opacity: 0;
         transition: 0.3s;
       }
-      .l-header__gnav {
+      .l-header-nav__list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -61,7 +61,7 @@ header {
           margin-top: 100px;
           margin-bottom: 50px;
         }
-        li {
+        .l-header-nav__item {
           font-weight: bold;
           margin: 5px 0;
           @include mq(sp) {
@@ -72,6 +72,12 @@ header {
           a {
             font-size: responsiveValue(1.6rem,1.6rem);
           }
+        }
+      }
+      .bx-wrapper {
+        display: none;
+        @include mq(sp) {
+          display: flex;
         }
       }
     }

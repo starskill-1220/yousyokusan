@@ -58,7 +58,7 @@ var breakpoint = 1;//768px以下の場合
 function sliderSet() {
     var windowWidth = window.innerWidth;
     if (windowWidth >= breakpoint && !sliderFlag) {//768px以上は1行でスライダー表示
-        slider = $('.news01').bxSlider({
+        slider = $('.p-fv-news__list').bxSlider({
           touchEnabled:false,//リンクを有効にするためスライドをマウスでドラッグした際にスライドの切り替えを可能にする機能を無効化
           mode: 'vertical',//縦スライド指定
           controls: false,//前後のコントロールを表示させない。
@@ -86,7 +86,7 @@ $(window).on('load resize', function() {
 //});
 
 $(document).ready(function(){
-  $('.slider01').slick({
+  $('.l-campaign-slider__list--pc').slick({
     autoplay: true,
     centerMode: true,
     slidesToShow: 3,
@@ -96,7 +96,7 @@ $(document).ready(function(){
   });
 });
 $(document).ready(function(){
-  $('.slider01-sp').slick({
+  $('.l-campaign-slider__list--sp').slick({
     autoplay: true,
     centerMode: true,
     slidesToShow: 1,
@@ -109,8 +109,8 @@ $(document).ready(function(){
 
 
 //アコーディオンをクリックした時の動作
-$('.accordion-head').on('click', function() {//タイトル要素をクリックしたら
-  var findElm = $(this).next(".accordion-body");//直後のアコーディオンを行うエリアを取得し
+$('.p-question__item-head').on('click', function() {//タイトル要素をクリックしたら
+  var findElm = $(this).next(".p-question__item-body");//直後のアコーディオンを行うエリアを取得し
   $(findElm).slideToggle();//アコーディオンの上下動作
     
   if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば

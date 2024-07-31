@@ -6,10 +6,10 @@
   background-color: c.$background-color;
   padding-top: 0;
 }
-#swiperMain1 {
+.p-fv-slider__wrapper--main {
   margin-top: 100px;
   margin-bottom: responsiveValue(20px,20px);
-  .swiper-slide {
+  .p-fv-slider__item {
     max-height: 500px;
     transition: 0.3s;
     border-radius: 0 0 15px 15px;
@@ -25,14 +25,14 @@
     }
   }
 }
-#swiperThumb1 {
+.p-fv-slider__wrapper--thumb {
   width: responsiveValue(1000px,300px);
   margin-bottom: responsiveValue(20px,20px);
-  .swiper-wrapper {
+  .p-fv-slider__list {
     display: flex;
     justify-content: center;
   }
-  .swiper-slide {
+  .p-fv-slider__item {
     border-radius: 5px;
     overflow: hidden;
     transform: translateX(5px);
@@ -54,7 +54,7 @@
 }
 
 @include mq(sp) {
-  #swiperMain2 {
+  .p-fv-slider__wrapper--sp {
     margin-top: 80px;
     .swiper-slide {
       width: 100vw;
@@ -92,7 +92,7 @@
     border-bottom: 1px solid #eeeeee;
   }
 }
-.news01 {
+.p-fv-news__list {
   max-width: 1100px;
   padding: 30px 20px;
   margin: 0 auto;
@@ -100,7 +100,7 @@
     order: 1;
     padding:10px 0px;
   }
-  .news-item {
+  .p-fv-news__item {
     width: 100%;
     @include mq(sp) {
       width: auto;
@@ -127,7 +127,7 @@
       @include mq(sp) {
         transform: translateY(5px);
       }
-      .news-item__cat {
+      .p-fv-news__cat {
         background-color: red;
         color: white;
         font-size: responsiveValue(1.4rem,1.2rem);
@@ -139,7 +139,7 @@
           transform: translateX(-2px)translateY(1px);
         }
       }
-      .news-item__date {
+      .p-fv-news__date {
         display:inline-block;
         font-size:responsiveValue(1.4rem,1.2rem);
         letter-spacing: 1px;
@@ -157,7 +157,7 @@
 
 
 
-.section01 {
+.p-about {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -170,14 +170,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  .section01-container {
+  .p-about__wrapper {
     width: 100%;
     max-width: 700px;
     padding: responsiveValue(100px,50px) responsiveValue(20px,20px) responsiveValue(50px,50px) responsiveValue(20px,20px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    p {
+    .p-about__text {
       font-size: responsiveValue(1.6rem,1.4rem);
       font-family: f.$font-family-zenkaku;
       color: c.$white-color;
@@ -190,12 +190,12 @@
 
 
 
-.slider01 {
+.l-campaign-slider__list--pc {
   width: 100%;
   display: flex;
   margin: 0 auto;
   margin-bottom: responsiveValue(20px,20px);
-  .slider-item {
+  .l-campaign-slider__item {
     height: auto;
     margin-right: 10px;
     margin-left: 10px;
@@ -251,11 +251,11 @@
   }
 }
 
-.slider01-sp {
+.l-campaign-slider__list--sp {
   width: 100%;
   display: flex;
   margin-bottom: responsiveValue(20px,20px);
-  .slider-item {
+  .l-campaign-slider__item {
     width: 100%;
     height: auto;
     margin-right: 0px;
@@ -320,7 +320,7 @@
 
 
 
-.__list05 {
+.p-recommend__list {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(responsiveValue(300px,280px), 1fr));
@@ -328,7 +328,7 @@
   justify-content: space-between;
   // ↓justify-content: center;が効かないので代用
 
-  .__item {
+  .p-recommend__item {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -338,7 +338,7 @@
       transform: scale(1.02);
       transition: 0.3s;
     }
-    .__item-img {
+    .p-recommend__item-img {
       position: relative;
       overflow: hidden;
       display: flex;
@@ -377,7 +377,7 @@
         object-fit: cover;
       }
     }
-    .__item-text-box {
+    .p-recommend__item-text-box {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -391,7 +391,7 @@
       outline-offset: -7px;
       }
       z-index: -1;
-      h3 {
+      .p-recommend__item-title {
         height: fit-content;
         min-height: 45px;
         @include mq(sp) {
@@ -402,7 +402,7 @@
         letter-spacing: 0px;
         margin-bottom: responsiveValue(15px,10px);
       }
-      .__item-price {
+      .p-recommend__item-price {
         font-size: responsiveValue(2.6rem,2.4rem);
         margin-bottom: 10px;
         letter-spacing: 0px;
@@ -417,7 +417,7 @@
           margin-left: responsiveValue(5px,4px);
         }
       }
-      .__item-desc {
+      .p-recommend__item-desc {
         font-size: responsiveValue(1.6rem,1.4rem);
         line-height: responsiveValue(2.5rem,2.3rem);
         margin-bottom: responsiveValue(20px,10px);
@@ -435,15 +435,15 @@
         padding-bottom: 3px;
       }
     }
-    &:nth-child(1) .__item-img::before {
+    &:nth-child(1) .p-recommend__item-img::before {
       content: "1";
       background-color: #F2C714;
     }
-    &:nth-child(2) .__item-img::before {
+    &:nth-child(2) .p-recommend__item-img::before {
       content: "2";
       background-color: #BFBFBF;
     }
-    &:nth-child(3) .__item-img::before {
+    &:nth-child(3) .p-recommend__item-img::before {
       content: "3";
       background-color: #92790E;
     }
@@ -453,14 +453,14 @@
 
 
 
-.__list06 {
+.l-goods__list {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(responsiveValue(300px,150px), 1fr));
   gap: responsiveValue(50px,15px) responsiveValue(30px,15px);
   justify-content: center;
   margin-bottom: responsiveValue(50px,30px);
-  .__item {
+  .l-goods__item {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -471,7 +471,7 @@
       transform: scale(1.02);
       transition: 0.3s;
     }
-    .__item-img {
+    .l-goods__item-img {
       position: relative;
       overflow: hidden;
       display: flex;
@@ -495,7 +495,7 @@
         object-fit: cover;
       }
     }
-    .__item-text-box {
+    .l-goods__item-text-box {
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -521,7 +521,7 @@
         letter-spacing: 0px;
         margin-bottom: responsiveValue(15px,10px);
       }
-      .__item-price {
+      .l-goods__item-price {
         font-size: responsiveValue(2.6rem,2.4rem);
         margin-bottom: 10px;
         letter-spacing: 0px;
@@ -536,7 +536,7 @@
           margin-left: responsiveValue(5px,4px);
         }
       }
-      .__item-desc {
+      .l-goods__item-desc {
         font-size: responsiveValue(1.6rem,1.4rem);
         line-height: responsiveValue(2.5rem,2.0rem);
         margin-bottom: responsiveValue(20px,10px);
@@ -559,7 +559,7 @@
 
 
 /*アコーディオン全体*/
-.accordion02{
+.p-question__wrapper{
   width: 100%;
   list-style: none;
   display: grid;
@@ -575,11 +575,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    li{
+    .p-question__item{
       padding: 20px 0;
       border-top: 1px solid c.$text-color;
     }
-    li:last-child {
+    .p-question__item:last-child {
       border-bottom: 1px solid c.$text-color;
     }
   }
@@ -591,7 +591,7 @@
     }
   }
 
-  .accordion-head {
+  .p-question__item-head {
     position: relative;/*+マークの位置基準とするためrelative指定*/
     cursor: pointer;
     font-size:responsiveValue(1.6rem,1.4rem);
@@ -599,31 +599,31 @@
     padding: 3% 3% 3% 50px;
     transition: all .5s ease;
   }
-  .accordion-head::before,
-  .accordion-head::after{
+  .p-question__item-head::before,
+  .p-question__item-head::after{
     position: absolute;
     content:'';
     width: 15px;
     height: 2px;
     background-color: #333;
   }
-  .accordion-head::before{
+  .p-question__item-head::before{
     top:48%;
     left: 15px;
     transform: rotate(0deg);
   }
-  .accordion-head::after{
+  .p-question__item-head::after{
     top:48%;
     left: 15px;
     transform: rotate(90deg);
   }
-  .accordion-head.close::before{
+  .p-question__item-head.close::before{
     transform: rotate(45deg);
     }
-    .accordion-head.close::after{
+    .p-question__item-head.close::after{
     transform: rotate(-45deg);
     }
-  .accordion-body {
+  .p-question__item-body {
     display: none;/*はじめは非表示*/
     width: 100%;
     background: #eeeeee;
