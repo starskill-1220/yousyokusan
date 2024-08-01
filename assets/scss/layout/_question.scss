@@ -1,0 +1,85 @@
+@use "../foundation/color" as c;
+@use "../foundation/mixin" as *;
+@use "../foundation/fonts" as f;
+
+/*アコーディオン全体*/
+.l-question__wrapper{
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(responsiveValue(510px,280px), 1fr));
+  gap: 30px;
+  @include mq(sp) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  margin-bottom: responsiveValue(50px,50px);
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .l-question__item{
+      padding: 20px 0;
+      border-top: 1px solid c.$text-color;
+    }
+    .l-question__item:last-child {
+      border-bottom: 1px solid c.$text-color;
+    }
+  }
+  @include mq(sp) {
+    .l-question__right-list {
+      li:first-child {
+        border-top: none;
+      }
+    }
+  }
+
+  .l-question__item-head {
+    display: flex;
+    align-items: center;
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size:responsiveValue(1.6rem,1.4rem);
+    line-height: 2.0rem;
+    height: 50px;
+    padding: 0 3% 0 50px;
+    transition: all .5s ease;
+  }
+  .l-question__item-head::before,
+  .l-question__item-head::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+  }
+  .l-question__item-head::before{
+    top:48%;
+    left: 15px;
+    transform: rotate(0deg);
+  }
+  .l-question__item-head::after{
+    top:48%;
+    left: 15px;
+    transform: rotate(90deg);
+  }
+  .l-question__item-head.close::before{
+    transform: rotate(45deg);
+    }
+    .l-question__item-head.close::after{
+    transform: rotate(-45deg);
+    }
+  .l-question__item-body {
+    display: none;/*はじめは非表示*/
+    width: 100%;
+    background: #eeeeee;
+    padding: 30px 20px;
+    margin-top: 20px;
+    line-height: 2.0rem;
+    @include mq(sp) {
+      margin-top: 20px;
+    }
+  }
+}
+
