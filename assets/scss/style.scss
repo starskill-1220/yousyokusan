@@ -21,13 +21,15 @@ Version: 1.0
 @use "layout/page";
 @use "layout/header";
 @use "layout/footer";
-@use "layout/heading";
 @use "layout/menu-trigger";
+@use "layout/goods-list";
+@use "layout/question";
 
 /* ===============================================
 # component
 =============================================== */
 @use "object/component/btn";
+@use "object/component/heading";
 @use "object/component/scrolldown";
 
 /* ===============================================
