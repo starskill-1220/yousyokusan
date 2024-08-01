@@ -134,7 +134,6 @@ function initScrollReveal() {
     duration: 300,
     delay: 0,
     easing: 'ease',
-    opacity: 0,
     viewFactor: 0,
   });
 
@@ -144,7 +143,6 @@ function initScrollReveal() {
     duration: 300,
     delay: 200,
     easing: 'ease',
-    opacity: 0,
     viewFactor: 0.2,
   });
 
@@ -154,7 +152,6 @@ function initScrollReveal() {
     duration: 300,
     delay: 100,
     easing: 'ease',
-    opacity: 0,
     viewFactor: 0.2,
   });
 
@@ -163,7 +160,6 @@ function initScrollReveal() {
     distance: '30px',
     duration: 300,
     easing: 'ease',
-    opacity: 0,
     viewFactor: 0.2,
   });
 }
