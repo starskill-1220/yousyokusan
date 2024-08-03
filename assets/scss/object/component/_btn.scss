@@ -32,3 +32,22 @@
     margin-left: 2px;
   }
 }
+
+.c-btn--cv {
+  display: block;
+  font-size: responsiveValue(1.6rem,1.6rem);
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: c.$text-color;
+  color: c.$white-color;
+  transition: 0.3s;
+  &:hover {
+    background-color: c.$white-color;
+    color: c.$text-color;
+    outline: 1px solid c.$text-color;
+    outline: -1px;
+    transition: 0.3s;
+  }
+}
