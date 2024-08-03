@@ -29,7 +29,7 @@ header {
       }
     }
     .l-header-nav {
-      width: 70%;
+      width: 60%;
       max-width: 900px;
       min-width: 550px;
       list-style: none;
@@ -44,7 +44,7 @@ header {
         width: 100vw;
         max-width: auto;
         min-width: auto;
-        height: 100svh;
+        height: 100dvh;
         background-color: white;
         padding: 20px;
         z-index: -1;
@@ -57,8 +57,11 @@ header {
         justify-content: space-between;
         @include mq(sp) {
           width: 100%;
-          flex-direction: column;
-          margin-top: 100px;
+          @include mq(sp) {
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+          }
+          margin-top: 150px;
           margin-bottom: 50px;
         }
         .l-header-nav__item {
@@ -66,11 +69,15 @@ header {
           margin: 5px 0;
           @include mq(sp) {
             margin: 0;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
           }
           text-align: center;
           a {
             font-size: responsiveValue(1.6rem,1.6rem);
+            letter-spacing: 5px;
+            @include mq(sp) {
+              writing-mode: vertical-rl;
+            }
           }
         }
       }
