@@ -25,10 +25,10 @@
     position: relative;
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
     transition: 0.3s;
-    &:hover {
-      transform: scale(1.02);
-      transition: 0.3s;
-    }
+    // &:hover {
+    //   transform: scale(1.02);
+    //   transition: 0.3s;
+    // }
     .l-goods__item-img {
       position: relative;
       overflow: hidden;
@@ -58,6 +58,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-end;
       padding: responsiveValue(30px,23px) responsiveValue(20px,12px) responsiveValue(10px,10px) responsiveValue(20px,12px);
       border-radius: 0 0 responsiveValue(25px,15px) responsiveValue(25px,15px);
       background-color: c.$white-color;
@@ -95,7 +96,7 @@
         }
       }
       .l-goods__item-desc {
-        font-size: responsiveValue(1.6rem,1.4rem);
+        font-size: responsiveValue(1.4rem,1.2rem);
         line-height: responsiveValue(2.5rem,2.0rem);
         margin-bottom: responsiveValue(20px,10px);
         letter-spacing: 0px;
@@ -105,6 +106,7 @@
       width: 100%;
       display: inline-block;
       text-align: right;
+      margin: 0;
       margin-bottom: responsiveValue(2px,2px);
       border-bottom: none;
       @include mq(sp) {

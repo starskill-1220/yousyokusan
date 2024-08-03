@@ -126,47 +126,47 @@ function initMenuTrigger() {
 }
 
 // ScrollRevealの初期化
+// ScrollRevealの初期化
 function initScrollReveal() {
-
-  ScrollReveal().reveal(".p-recommend__item:nth-child(1)", {
-    origin: "bottom",
-    distance: '30px',
-    duration: 300,
-    delay: 0,
-    easing: 'ease',
+  const sr = ScrollReveal({
     viewFactor: 0,
+    origin: "bottom",
+    distance: '100px',
+    duration: 200,
+    opacity: 0,
+    easing: 'ease'
   });
 
-  ScrollReveal().reveal(".p-recommend__item:nth-child(2)", {
-    origin: "bottom",
-    distance: '30px',
-    duration: 300,
+  sr.reveal(".p-recommend__item:nth-child(1)", {
+  });
+
+  sr.reveal(".p-recommend__item:nth-child(2)", {
     delay: 200,
-    easing: 'ease',
-    viewFactor: 0.2,
   });
 
-  ScrollReveal().reveal(".p-recommend__item:nth-child(3)", {
-    origin: "bottom",
-    distance: '30px',
-    duration: 300,
+  sr.reveal(".p-recommend__item:nth-child(3)", {
     delay: 100,
-    easing: 'ease',
-    viewFactor: 0.2,
   });
 
-  ScrollReveal().reveal(".l-goods__item", {
-    origin: "bottom",
-    distance: '30px',
-    duration: 300,
-    easing: 'ease',
-    viewFactor: 0.2,
+  sr.reveal(".l-goods__item", {
+  });
+
+  sr.reveal(".scroll-effect", {
   });
 }
 
 // 全ての初期化が終わった後にScrollRevealを同期
 $(window).on('load', () => {
   setTimeout(() => {
-    ScrollReveal().sync();
+    ScrollReveal().reveal();
   }, 100);
+});
+
+var rellax = new Rellax('.rellax', {
+  speed: -2,
+  center: false,
+  wrapper: null,
+  round: true,
+  vertical: true,
+  horizontal: false
 });

@@ -91,10 +91,13 @@ section {
   padding: responsiveValue(180px,150px) 0 responsiveValue(0px,0px) 0;
 }
 
+#page-about {
+  padding: responsiveValue(50px,50px) 0 responsiveValue(100px,50px) 0;
+}
+
 #page-question, #page-contact {
   padding: responsiveValue(180px,150px) 0 responsiveValue(100px,50px) 0;
 }
-
 
 #particles-js {
   position: fixed;

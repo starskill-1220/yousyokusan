@@ -1,0 +1,170 @@
+@use "../../foundation/color" as c;
+@use "../../foundation/fonts" as f;
+@use "../../foundation/mixin" as *;
+
+.p-page-about__fv {
+  height: responsiveValue(500px, 300px);
+  overflow: hidden;
+  position: relative;
+  background-color: c.$text-color;
+  img {
+    position: absolute;
+    bottom: -20%;
+    @include mq(sp) {
+      bottom: -30%;
+    }
+    width: 100%;
+    height: auto;
+    @include mq(sp) {
+      height: 120%;
+      object-fit: cover;
+    }
+    opacity: 0.85;
+  }
+  h1 {
+    width: 100%;
+    font-size: responsiveValue(4.0rem, 3rem);
+    line-height: responsiveValue(4.5rem, 3rem);
+    margin-bottom: responsiveValue(50px, 25px);
+    text-align: center;
+    color: c.$white-color;
+    letter-spacing: 3px;
+    filter: drop-shadow(0px 0px 5px c.$text-color);
+    z-index: 1;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: "ABOUT YOUSYOKUSAN";
+      width: 100%;
+      height: 100%;
+      font-size: responsiveValue(1.6rem, 1.4rem);
+      line-height: 1.8;
+      color: c.$white-color;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.p-page-about__wrapper {
+  padding: responsiveValue(100px, 50px) 0 responsiveValue(50px, 20px);
+  .p-page-about__content-box {
+    display: flex;
+    @include mq(sp) {
+      flex-direction: column;
+    }
+    gap: responsiveValue(50px, 20px);
+    margin-bottom: responsiveValue(50px, 25px);
+    align-items: stretch;
+    .p-page-about__text-box {
+      width: 65%;
+      @include mq(sp) {
+        width: 100%;
+      }
+      height: fit-content;
+      padding: responsiveValue(50px, 25px);
+      background-color: c.$white-color;
+      border-radius: 25px;
+      outline: 1px solid #e6e6e6;
+      outline-offset: -8px;
+      .p-page-about__heading {
+        font-size: responsiveValue(3.0rem, 2rem);
+        line-height: responsiveValue(4.5rem, 3rem);
+        margin-bottom: responsiveValue(50px, 25px);
+      }
+      .p-page-about__body {
+        font-size: responsiveValue(1.6rem, 1.4rem);
+        line-height: 1.8;
+      }
+    }
+    .p-page-about__img-box {
+      width: 35%;
+      @include mq(sp) {
+        width: 100%;
+      }
+      height: responsiveValue(600px, 300px);
+      border-radius: 25px;
+      overflow: hidden;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .p-page-about__img-box--fit {
+      width: 35%;
+      @include mq(sp) {
+        width: 100%;
+      }
+      border-radius: 25px;
+      overflow: hidden;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .p-page-about__foot-img {
+    height: 300px;
+    @include mq(sp) {
+      height: 200px;
+    }
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      @include mq(sp) {
+        height: 100dvh;
+        object-fit: cover;
+      }
+      position: absolute;
+      bottom: -100%;
+      @include mq(sp) {
+        bottom: 0px;
+      }
+    }
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  
+}
+
+.p-page-about__foot-img--reverse {
+  height: 300px;
+  @include mq(sp) {
+    height: 200px;
+  }
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+    @include mq(sp) {
+      height: 100dvh;
+      object-fit: cover;
+    }
+    position: absolute;
+    bottom: -70%;
+    @include mq(sp) {
+      bottom: 200px;
+    }
+  }
+}
+.p-page-about__last-text {
+  font-size: responsiveValue(1.6rem, 1.4rem);
+  line-height: 1.8;
+  padding: responsiveValue(50px, 25px);
+  background-color: c.$white-color;
+  border-radius: 30px;
+  outline: 1px solid #e6e6e6;
+  outline-offset: -8px;
+}
