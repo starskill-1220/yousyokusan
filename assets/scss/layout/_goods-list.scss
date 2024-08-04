@@ -34,7 +34,7 @@
       overflow: hidden;
       display: flex;
       justify-content: center;
-      border-radius: 20px;
+      border-radius: 15px;
       @include mq(sp) {
         border-radius: 10px;
       }
@@ -60,7 +60,7 @@
       justify-content: space-between;
       align-items: flex-end;
       padding: responsiveValue(30px,23px) responsiveValue(20px,12px) responsiveValue(10px,10px) responsiveValue(20px,12px);
-      border-radius: 0 0 responsiveValue(25px,15px) responsiveValue(25px,15px);
+      border-radius: 0 0 responsiveValue(15px,10px) responsiveValue(15px,10px);
       background-color: c.$white-color;
       transform: translateY(-15px);
       outline: 1px solid #e6e6e6;

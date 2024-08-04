@@ -1,0 +1,160 @@
+@use "../../foundation/color" as c;
+@use "../../foundation/fonts" as f;
+@use "../../foundation/mixin" as *;
+
+
+#page-goods-detail {
+  @include mq(sp) {
+    padding-top: 100px;
+  }
+}
+
+.p-page-goods-detail{
+  .p-page-goods-detail__wrapper {
+    display: flex;
+    @include mq(sp) {
+      flex-direction: column;
+    }
+    justify-content: space-between;
+    gap: responsiveValue(50px,20px);
+    .p-page-goods-detail__img-wrapper {
+      width: 500px;
+      @include mq(sp) {
+        width: 100%;
+      }
+      .p-page-goods-detail__img-box {
+        .p-page-goods-detail__img-main-list {
+          width: 100%;
+          margin-bottom: 10px;
+          @include mq(sp) {
+            margin-bottom: 2.5vw;
+          }
+          li {
+            height: 500px;
+            @include mq(sp) {
+              height: calc(100vw - 40px);
+            }
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            img {
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+
+        }
+        .p-page-goods-detail__img-thumb-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          @include mq(sp) {
+            gap: 2.5vw;
+          }
+          li {
+            width: 92px!important;
+            height: 92px!important;
+            @include mq(sp) {
+              width: calc((100vw - 40px) / 4.4)!important;
+              height: calc((100vw - 40px) / 4.4)!important;
+            }
+            border-radius: 10px;
+            background-color: c.$white-color;
+            overflow: hidden;
+            margin-right: 0!important;
+            cursor: pointer;
+            
+            img {
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              opacity: 0.7;
+            }
+          }
+          .swiper-slide-thumb-active {
+            outline: 3px solid c.$imp-red;
+            outline-offset: -2px;
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .p-page-goods-detail__detail-wrapper {
+      width: 50%;
+      background-color: c.$white-color;
+      padding: responsiveValue(40px,30px) responsiveValue(40px,25px);
+      border-radius: 15px;
+      outline: 2px solid c.$sub-gray;
+      outline-offset: -10px;
+      @include mq(sp) {
+        width: 100%;
+      }
+      .p-page-goods-detail__detail-box {
+        margin-bottom: responsiveValue(20px,20px);
+        border-bottom: 1px solid c.$text-color;
+        padding-bottom: responsiveValue(20px,20px);
+        .p-page-goods-detail__detail-shop-name {
+          font-size: responsiveValue(1.4rem, 1.2rem);
+          margin-bottom: responsiveValue(8px,8px);
+        }
+        .p-page-goods-detail__detail-title {
+          font-size: responsiveValue(2.0rem,1.8rem);
+          margin-bottom: responsiveValue(20px,20px);
+        }
+        .p-page-goods-detail__detail-price {
+          font-size: responsiveValue(2.8rem,2.6rem);
+          margin-bottom: responsiveValue(20px,20px);
+          display: flex;
+          align-items: flex-end;
+          &::before {
+            content: "¥";
+            font-size: responsiveValue(2.0rem,2.0rem);
+            margin-right: responsiveValue(10px,5px);
+            line-height: responsiveValue(2.0rem,2.0rem);
+          }
+          &::after {
+            content: "(税込) + 送料";
+            font-size: responsiveValue(1.4rem,1.2rem);
+            margin-left: responsiveValue(10px,5px);
+            line-height: responsiveValue(1.4rem,1.2rem);
+          }
+        }
+        .p-page-goods-detail__detail-desc {
+          font-size: responsiveValue(1.6rem,1.4rem);
+          margin-bottom: responsiveValue(20px,20px);
+          line-height: responsiveValue(2.5rem,2.0rem);
+        }
+      }
+      .p-page-goods-detail__detail-caution {
+        font-size: responsiveValue(1.6rem,1.4rem);
+        color: c.$imp-red;
+        font-weight: normal;
+        line-height: responsiveValue(2.5rem,2.0rem);
+        margin-bottom: responsiveValue(20px,20px);
+        .p-page-goods-detail__detail-caution-title {
+          display: block;
+          font-weight: bold;
+          background-color: c.$imp-red;
+          color: c.$white-color;
+          padding: 7px 10px;
+          border-radius: 5px;
+          margin-bottom: responsiveValue(10px,10px);
+        }
+      }
+    }
+  }
+}
+
+// Swiperのカスタムスタイル（必要に応じて）
+#swiperMain3 {
+  // メインスワイパーのスタイル
+}
+
+#swiperThumb3 {
+  // サムネイルスワイパーのスタイル
+  z-index: 999999;
+}
+

@@ -23,14 +23,14 @@ header {
     justify-content: space-between;
     align-items: center;
     .l-header__logo {
-      width: responsiveValue(300px,200px);
+      width: responsiveValue(300px,250px);
       img {
         width: 100%;
       }
     }
     .l-header-nav {
       width: 60%;
-      max-width: 900px;
+      max-width: 1000px;
       min-width: 550px;
       list-style: none;
       @include mq(sp) {
@@ -74,9 +74,10 @@ header {
           text-align: center;
           a {
             font-size: responsiveValue(1.6rem,1.6rem);
-            letter-spacing: 5px;
+            letter-spacing: 0px;
             @include mq(sp) {
               writing-mode: vertical-rl;
+              letter-spacing: 5px;
             }
           }
         }

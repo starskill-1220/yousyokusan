@@ -28,6 +28,14 @@ function initSwipers() {
     slidesPerView: 6,
     watchSlidesProgress: true,
   });
+
+  const swiperThumb3 = new Swiper("#swiperThumb3", {
+    watchSlidesProgress: true,
+    slidesPerView: 4,  // 表示するスライド数を指定
+    spaceBetween: 10,  // スライド間のスペース
+    touchRatio: 0,     // タッチによるスワイプを無効化
+    slideToClickedSlide: true,  // クリックしたスライドに移動する
+  });
   
   new Swiper("#swiperMain1", {
     spaceBetween: 20,
@@ -54,6 +62,15 @@ function initSwipers() {
       delay: 3000,
       disableOnInteraction: false,
     },
+  });
+  
+  new Swiper("#swiperMain3", {
+    spaceBetween: 20,
+    thumbs: { swiper: swiperThumb3 },
+    centeredSlides: true,
+    slidesPerView: 1,
+    loop: true,
+    effect: 'fade',
   });
 }
 
@@ -152,6 +169,9 @@ function initScrollReveal() {
   });
 
   sr.reveal(".scroll-effect", {
+  });
+  sr.reveal(".scroll-effect-slow", {
+    duration: 500,
   });
 }
 
