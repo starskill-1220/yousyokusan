@@ -170,6 +170,9 @@ function initScrollReveal() {
 
   sr.reveal(".scroll-effect", {
   });
+  sr.reveal(".scroll-effect-slow", {
+    duration: 500,
+  });
 }
 
 // 全ての初期化が終わった後にScrollRevealを同期
